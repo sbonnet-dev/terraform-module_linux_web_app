@@ -3,6 +3,11 @@ variable "name" {
   description = "Resource group name"
 }
 
+variable "rg_name" {
+    type = string
+    description = "Resource group name"
+}
+
 variable "project" {
   type        = string
   description = "Resource group name"
