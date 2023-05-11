@@ -4,8 +4,8 @@ variable "name" {
 }
 
 variable "rg_name" {
-    type = string
-    description = "Resource group name"
+  type        = string
+  description = "Resource group name"
 }
 
 variable "project" {
@@ -52,37 +52,37 @@ variable "owner" {
 }
 
 variable "service_plan_id" {
-    type = string
-    description = "ID Service Plan"
+  type        = string
+  description = "ID Service Plan"
 }
 
 variable "storage_account_name" {
-    type = string
-    description = "Storage Account Name"
+  type        = string
+  description = "Storage Account Name"
 }
 
 variable "search_service_name" {
-    type = string
-    description = "Search Service Name"
+  type        = string
+  description = "Search Service Name"
 }
 
 variable "search_index" {
-    type = string
-    description = "Search Index"
+  type        = string
+  description = "Search Index"
 }
 
 variable "openai_service" {
-    type = string
-    description = "OpenAI Service"
+  type        = string
+  description = "OpenAI Service"
 }
 
 variable "openai_chatgpt_deployement" {
-    type = string
-    description = "ChatGPT Deployement name"
+  type        = string
+  description = "ChatGPT Deployement name"
 }
 
 variable "openai_gpt_deployement" {
-    type = string
-    description = "GPT Deployement name"
+  type        = string
+  description = "GPT Deployement name"
 }
 

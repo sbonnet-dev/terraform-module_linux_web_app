@@ -1,14 +1,14 @@
 
 resource "azurerm_linux_web_app" "linux_web_app" {
-  name     = lower(format("lwapp-%s-%s-%s", var.project, var.environment, var.name))
+  name = lower(format("lwapp-%s-%s-%s", var.project, var.environment, var.name))
 
   app_settings = {
-    AZURE_OPENAI_CHATGPT_DEPLOYMENT = var.openai_chatgpt_deployement//"chat"
-    AZURE_OPENAI_GPT_DEPLOYMENT     = var.openai_gpt_deployement//"davinci"
-    AZURE_OPENAI_SERVICE            = var.openai_service //"cog-tvxbgsftoyot5"
-    AZURE_SEARCH_INDEX              = var.search_index//"gptkbindex"
-    AZURE_SEARCH_SERVICE            = var.search_service_name //"gptkb-tvxbgsftoyot5"
-    AZURE_STORAGE_ACCOUNT           = var.storage_account_name //"sttvxbgsftoyot5"
+    AZURE_OPENAI_CHATGPT_DEPLOYMENT = var.openai_chatgpt_deployement //"chat"
+    AZURE_OPENAI_GPT_DEPLOYMENT     = var.openai_gpt_deployement     //"davinci"
+    AZURE_OPENAI_SERVICE            = var.openai_service             //"cog-tvxbgsftoyot5"
+    AZURE_SEARCH_INDEX              = var.search_index               //"gptkbindex"
+    AZURE_SEARCH_SERVICE            = var.search_service_name        //"gptkb-tvxbgsftoyot5"
+    AZURE_STORAGE_ACCOUNT           = var.storage_account_name       //"sttvxbgsftoyot5"
     AZURE_STORAGE_CONTAINER         = "content"
     ENABLE_ORYX_BUILD               = "True"
     SCM_DO_BUILD_DURING_DEPLOYMENT  = "True"
@@ -17,17 +17,17 @@ resource "azurerm_linux_web_app" "linux_web_app" {
   location            = var.location
   resource_group_name = var.rg_name
   service_plan_id     = var.service_plan_id //"/subscriptions/01f9de63-11ac-4a41-acd5-e398487749e5/resourceGroups/rg-sboai-env/providers/Microsoft.Web/serverfarms/plan-tvxbgsftoyot5"
-  
+
   tags = {
-    env       = var.environment
-    project   = var.project
-    owner     = var.owner
+    env     = var.environment
+    project = var.project
+    owner   = var.owner
   }
 
   identity {
     type = "SystemAssigned"
   }
-  
+
   logs {
     detailed_error_messages = true
     failed_request_tracing  = true
